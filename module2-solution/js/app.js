@@ -32,6 +32,10 @@
             {
                 name: "Beer",
                 quantity: 20
+            },
+            {
+                name: "Bread",
+                quantity: 1
             }
         ];
         var boughtList = [];
