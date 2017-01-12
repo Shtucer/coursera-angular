@@ -36,6 +36,14 @@
             {
                 name: "Bread",
                 quantity: 1
+            },
+            {
+                name: "Sweater",
+                quantity: 1
+            },
+            {
+                name: "Shoes",
+                quantity: 2
             }
         ];
         var boughtList = [];
