@@ -27,23 +27,23 @@
         var toBuyList = [
             {
                 name: "Snacks",
-                quantity: "1 bag"
+                quantity: 1
             },
             {
                 name: "Beer",
-                quantity: "20 bottles"
+                quantity: 20
             },
             {
                 name: "Bread",
-                quantity: "1 piece"
+                quantity: 1
             },
             {
                 name: "Sweater",
-                quantity: "1"
+                quantity: 1
             },
             {
                 name: "Shoes",
-                quantity: "2 pairs"
+                quantity: 2
             }
         ];
         var boughtList = [];
