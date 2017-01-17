@@ -9,31 +9,39 @@
     function FoundItemsDirective() {
         var ddo = {
             scope: {
-                items: '<foundItems'  
+                items: '<',
+                onRemove: '&',
+                onSearchStatus: '<'
             },
             templateUrl: "foundItems.html",
             controller: FoundItemsDirectiveController,
             controllerAs: 'found',
-            bindToController: true
+            bindToController: true,
         }
         return ddo;
     };
 
+    
     function FoundItemsDirectiveController() {
-        var items = this;
+        var found = this;
     };
     
     NarrowItDownController.$inject = ['NarrowItDownService'];
     function NarrowItDownController(NarrowItDownService) {
         var narrowCtl = this;
-        narrowCtl.searchTerm = "ass";
+        narrowCtl.searchTerm = "";
         narrowCtl.foundItems = Array();
         narrowCtl.onSearch = function() {
+            
             NarrowItDownService.getMatchedMenuItems(narrowCtl.searchTerm)
                 .then(function(res) {
                     narrowCtl.foundItems = res;
-                }).catch(function(error) {console.log("Smth went wrong!", error)});
+                }).catch(function(error) {console.log("Something went wrong!", error)});
         };
+
+        narrowCtl.removeItem = function(index) {
+            narrowCtl.foundItems.splice(index,1);
+        }
     };
 
     NarrowItDownService.$inject=['$http', 'ApiBasePath'];
