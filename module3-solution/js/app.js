@@ -32,11 +32,14 @@
         narrowCtl.searchTerm = "";
         narrowCtl.foundItems = Array();
         narrowCtl.onSearch = function() {
-            
+            if (narrowCtl.searchTerm == "") {
+                narrowCtl.foundItems.splice(0,narrowCtl.foundItems.length);
+                return;
+            }
             NarrowItDownService.getMatchedMenuItems(narrowCtl.searchTerm)
                 .then(function(res) {
                     narrowCtl.foundItems = res;
-                }).catch(function(error) {console.log("Something went wrong!", error)});
+                }).catch(function(error) {console.log("Smth went wrong!", error)});
         };
 
         narrowCtl.removeItem = function(index) {
