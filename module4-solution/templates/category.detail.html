@@ -1,0 +1,24 @@
+<div class="col-md-8">
+    <h2>
+        <span> {{ categoryDetailCtrl.title }} </span>
+        <small><a ui-sref="categories" class=" text-danger pull-right">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a></small>
+    </h2>
+    <ul ng-if="categoryDetailCtrl.categoryItems.length" class="list-group">
+        <li ng-repeat="itm in categoryDetailCtrl.categoryItems"
+            class="list-group-item"
+            ui-sref="categories.category.item({itemId: $index})"
+            ui-sref-active="active">
+            {{ itm.name }}
+
+        </li>
+    </ul>
+    <div ng-if="!categoryDetailCtrl.categoryItems.length">
+        <h3><i class="glyphicon glyphicon-exclamation-sign"></i> Empty category. Or wrong category name!</h3>
+
+    </div>
+</div>
+<div class="col-md-4">
+    <ui-view></ui-view>
+</div>

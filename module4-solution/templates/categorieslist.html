@@ -1,0 +1,12 @@
+<h2>Categories</h2>
+
+<ul class="list-group hover">
+    <li ng-repeat="category in $ctrl.categories"
+        ui-sref-active="active"
+        ui-sref="categories.category({shortCategoryName: category.short_name})"
+        class="list-group-item"
+    >
+        
+        {{category.name}}
+    </li>
+</ul>

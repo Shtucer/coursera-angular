@@ -1,0 +1,17 @@
+body {
+  font-size: 1.2em;
+}
+
+.navbar li a:hover {
+    cursor: pointer;
+    background-color: #e5e5e5 !important;
+    color: #555;
+}
+
+
+
+.list-group.hover > .list-group-item:not([class*='active']):hover {
+    background-color: #e5e5e5;
+    color: #555;
+}
+
