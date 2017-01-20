@@ -1,5 +1,20 @@
 <div>
-    <ul>
-        <li ng-repeat="item in items"> {{ item.description }} </li>
-    </ul>
+    <div ng-if="!found.items.length">Nothig found</div>
+    <table ng-if="found.items.length > 0" class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Short Name</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in found.items"> </li>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ item.short_name }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td><button class="btn btn-warning" ng-click="found.onRemove({index:$index});"><i class="glyphicon glyphicon-remove"></i> Don't want this one!</button></td>
+    </table>
 </div>
