@@ -23,7 +23,7 @@
             cancel = $rootScope.$on('$stateChangeSuccess',
                                     function(event, toState, toParams, fromState, fromParams) {
                                         $ctrl.errorMsg = "Oh, look! I'm a page with " + toState.name.split(".").length + " views!";
-                    console.log(toState);
+//                    console.log(toState);
                 });
             cancellers.push(cancel);
             var cancel = $rootScope.$on('$stateChangeError',
