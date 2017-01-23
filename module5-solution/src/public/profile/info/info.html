@@ -1,5 +1,29 @@
-<h2>Profile</h2>
-<div ng-if="!infoCtrl.isExists()">
-    Not Signed Up Yet. <a href="#" ui-sref="public.profile.signup">Sign up Now!</a>
+<div class="row">
+
+    <div ng-if="!infoCtrl.isExists()">
+        Not Signed Up Yet. <a href="#" ui-sref="public.profile.signup">Sign up Now!</a>
+    </div>
+    <div ng-if="infoCtrl.isExists()">
+        <h2 class="text-center">Profile</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ infoCtrl.profile.first_name}} {{ infoCtrl.profile.last_name}} </div>
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>First name:</dt>
+                <dd>{{ infoCtrl.profile.first_name }}</dd>
+                <dt>Last name:</dt>
+                <dd>{{infoCtrl.profile.last_name}}</dd>
+                <dt>Email:</dt>
+                <dd>{{infoCtrl.profile.email}}</dd>
+                <dt>Phone:</dt>
+                <dd>{{infoCtrl.profile.phone}}</dd>
+                <dt>Favorite dish:</dt>
+                <dd>
+                    <menu-item menu-item="infoCtrl.profile.favorite_dish"></menu-item>
+                </dd>
+            </dl>
+        </div>
+    </div>
 </div>
-{{ infoCtrl.profile.first_name}}
