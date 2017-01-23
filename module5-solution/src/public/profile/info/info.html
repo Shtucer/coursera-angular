@@ -1,0 +1,5 @@
+<h2>Profile</h2>
+<div ng-if="!infoCtrl.isExists()">
+    Not Signed Up Yet. <a href="#" ui-sref="public.profile.signup">Sign up Now!</a>
+</div>
+{{ infoCtrl.profile.first_name}}
